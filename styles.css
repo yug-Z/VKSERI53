@@ -1,0 +1,128 @@
+:root {
+  --bg: #111318;
+  --panel: #1a1f29;
+  --accent: #55dd88;
+  --text: #edf2ff;
+  --muted: #a2b0c9;
+  --danger: #ff637d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1f2533 0%, #0d1016 55%);
+  color: var(--text);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.game-panel,
+.sentiment-panel {
+  background: var(--panel);
+  border: 1px solid #2e3647;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.28);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.6rem;
+}
+
+.subtitle,
+.help,
+.small-note {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+}
+
+canvas {
+  width: 100%;
+  border: 1px solid #3a445b;
+  border-radius: 8px;
+  background: linear-gradient(#8fd4ff 0 42%, #b58f5a 42% 100%);
+}
+
+.hud {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+  padding: 0.5rem;
+  background: #131823;
+  border-radius: 8px;
+  border: 1px solid #2d3550;
+}
+
+label {
+  display: block;
+  margin: 0.6rem 0 0.3rem;
+  font-weight: 600;
+}
+
+select,
+textarea,
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #3e4860;
+  background: #0f1420;
+  color: var(--text);
+  padding: 0.6rem;
+}
+
+button {
+  margin-top: 0.8rem;
+  background: linear-gradient(90deg, #2f9f57, #4fcc7b);
+  border: none;
+  color: #04100a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.log-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.log-list li {
+  margin-bottom: 0.4rem;
+  color: #dce3f5;
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  gap: 0.35rem;
+  height: 140px;
+  padding: 0.6rem;
+  background: #0f1420;
+  border-radius: 8px;
+  border: 1px solid #33405f;
+}
+
+.bar {
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+}
+
+@media (max-width: 1020px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
