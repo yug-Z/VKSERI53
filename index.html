@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahindra Thar Craft Run</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="game-panel">
+      <h1>Mahindra Thar: Craft Desert Run</h1>
+      <p class="subtitle">Minecraft-style block world + live player sentiment tracking</p>
+      <canvas id="gameCanvas" width="920" height="520" aria-label="Mahindra Thar game canvas"></canvas>
+      <div class="hud">
+        <span id="speedLabel">Speed: 0</span>
+        <span id="distanceLabel">Distance: 0 m</span>
+        <span id="moodLabel">Live Mood: neutral</span>
+      </div>
+      <p class="help">Controls: W/S or ↑/↓ accelerate & brake, A/D or ←/→ steer.</p>
+    </section>
+
+    <aside class="sentiment-panel">
+      <h2>Player Sentiment Auto Update</h2>
+      <label for="moodSelect">Current mood</label>
+      <select id="moodSelect">
+        <option value="excited">Excited</option>
+        <option value="happy">Happy</option>
+        <option value="neutral" selected>Neutral</option>
+        <option value="frustrated">Frustrated</option>
+        <option value="angry">Angry</option>
+      </select>
+
+      <label for="commentInput">Quick feedback</label>
+      <textarea id="commentInput" rows="4" placeholder="Tell us how this Thar drive feels..."></textarea>
+
+      <button id="saveMoodBtn" type="button">Capture Sentiment</button>
+      <p class="small-note">Auto-captures every 10 seconds while you play.</p>
+
+      <h3>Live Sentiment Stream</h3>
+      <ul id="logList" class="log-list"></ul>
+
+      <h3>Last 12 Samples</h3>
+      <div id="chart" class="chart" aria-label="sentiment trend chart"></div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
